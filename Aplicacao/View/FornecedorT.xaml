@@ -1,0 +1,41 @@
+﻿<Window x:Class="Aplicacao.FornecedorT"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aplicacao"
+        mc:Ignorable="d"
+         Title="Fornecedor" Height="450" Width="800" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" ResizeMode="NoResize" SizeToContent="WidthAndHeight" Loaded="Window_Loaded_1">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="399" Margin="0,10,0,0" VerticalAlignment="Top" Width="782">
+            <TabItem x:Name="tbConsulta" Header="Consulta" HorizontalAlignment="Right" Width="62">
+                <Grid Background="#FFE5E5E5">
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="197" Margin="14,107,0,0" VerticalAlignment="Top" Width="752"/>
+                    <DataGrid 
+                        x:Name="dgFonec" HorizontalAlignment="Left" ItemsSource="{Binding Path=ExibirDados}" Height="152" Margin="32,124,0,0" VerticalAlignment="Top" Width="710" IsReadOnly="True" MouseDoubleClick="dgFonec_MouseDoubleClick"/>
+                    <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Height="42" Margin="241,319,0,0" VerticalAlignment="Top" Width="112"/>
+                    <Button x:Name="btnNovo" Content="Novo" HorizontalAlignment="Left" Height="42" Margin="444,319,0,0" VerticalAlignment="Top" Width="112" Click="btnNovo_Click" />
+                    <Label Content="Pesquisar: " HorizontalAlignment="Left" Margin="99,42,0,0" VerticalAlignment="Top" FontSize="20" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" FontWeight="Black"/>
+                    <TextBox x:Name="txtPesquisa" HorizontalAlignment="Left" Height="42" Margin="223,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="387" FontSize="20" />
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tbCadastro" Header="Cadastro">
+                <Grid Background="#FFE5E5E5">
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="197" Margin="73,36,0,0" VerticalAlignment="Top" Width="653"/>
+                    <Label Content="Nome" HorizontalAlignment="Left" Margin="141,55,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+                    <Label Content="Endereço" HorizontalAlignment="Left" Margin="103,140,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+                    <TextBox x:Name="txtForNome" HorizontalAlignment="Left" Height="36" Margin="223,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" FontSize="20"/>
+                    <TextBox x:Name="txtCadFornEnd" HorizontalAlignment="Left" Height="36" Margin="223,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" FontSize="20" />
+                    <Button x:Name="btnCadFornCanc" Content="Cancelar" HorizontalAlignment="Left" Height="54" Margin="141,270,0,0" VerticalAlignment="Top" Width="176" Click="btnCadFornCanc_Click"/>
+                    <Button x:Name="btnCadForSalvar" Content="Salvar" HorizontalAlignment="Left" Height="54" Margin="455,270,0,0" VerticalAlignment="Top" Width="184" Click="btnCadForSalvar_Click_1"/>
+                    <Button x:Name="btnSalvarAlt" Content="Salvar" HorizontalAlignment="Left" Height="56" Margin="465,268,0,0" VerticalAlignment="Top" Width="168" Background="#FF3AB1B7" Visibility="Hidden" Click="btnSalvarAlt_Click"/>
+
+                    <Label Content="CNPJ" HorizontalAlignment="Left" Margin="141,102,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+                    <TextBox x:Name="txtCadFonecCNPJ" HorizontalAlignment="Left" Height="36" Margin="223,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" FontSize="20"/>
+                    <CheckBox x:Name="chb_CadFornec" Content="Desativado ?" HorizontalAlignment="Left" Margin="581,190,0,0" VerticalAlignment="Top" FontSize="20" Checked="chb_CadFornec_Checked"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

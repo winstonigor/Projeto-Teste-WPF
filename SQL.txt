@@ -1,0 +1,39 @@
+create DATABASE BDTESTE
+USE BDTESTE
+ 
+CREATE TABLE Usuario (
+	Usu_codigo INT IDENTITY PRIMARY KEY NOT NULL,
+	Usu_nome VARCHAR (50) NOT NULL,
+	Usu_psw VARCHAR (50) NOT NULL,
+	Usu_tipo VARCHAR (50) NOT NULL,
+)
+
+
+CREATE TABLE Fornecedor (
+	For_codigo INT IDENTITY PRIMARY KEY NOT NULL,
+	For_nome VARCHAR (50) NOT NULL,
+	For_cnpj VARCHAR (50) NOT NULL,
+	For_endereco VARCHAR (60) NOT NULL,
+	For_ativ BIT NOT NULL,
+)
+GO
+CREATE TABLE Produtos(
+	Pro_codio INT IDENTITY PRIMARY KEY NOT NULL,
+	Pro_descricao VARCHAR (50) NOT NULL,
+	Pro_saldo DECIMAL(10,3) NOT NULL,
+	For_codigo int not null, 
+	CONSTRAINT FK_Fornecedor FOREIGN KEY (For_codigo) 
+	REFERENCES Fornecedor(For_codigo)
+)
+
+INSERT INTO Fornecedor(For_nome,For_cnpj, For_endereco, For_ativ)
+VALUES ('Winston igor','04379889106', 'Rua Jorge Ferreria', 0);
+
+INSERT INTO Produtos(Pro_descricao, Pro_saldo, For_codigo)
+VALUES ('Arroz','10', 1);
+
+INSERT INTO Usuario (Usu_nome, usu_psw, Usu_tipo)
+VALUES ('1','1', 'bostao')
+
+select * from Fornecedor
+select * from Produtos

@@ -1,0 +1,46 @@
+﻿<Window x:Class="Aplicacao.Produtos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aplicacao"
+        mc:Ignorable="d"
+        Title="Produtos" Height="450" Width="800" WindowStartupLocation="CenterScreen" ShowInTaskbar="False"  ResizeMode="NoResize" SizeToContent="WidthAndHeight" Loaded="Window_Loaded">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="399" Margin="0,10,0,0" VerticalAlignment="Top" Width="782">
+            <TabItem x:Name="tbConsulta" Header="Consulta" HorizontalAlignment="Right" Width="62">
+                <Grid Background="#FFE5E5E5">
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="197" Margin="14,107,0,0" VerticalAlignment="Top" Width="752"/>
+                    <DataGrid HorizontalAlignment="Left" Height="152" Margin="32,124,0,0" VerticalAlignment="Top" Width="710">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Nome}" Header="Nome do cliente"/>
+                            <DataGridTextColumn Binding="{Binding Telefone}"  Header="Telefone"/>
+                            <DataGridHyperlinkColumn Binding="{Binding Email}" Header="E-mail"/>
+                            <DataGridCheckBoxColumn Binding="{Binding Ativo, Mode=OneWay}" Header="Cliente Ativo"/>
+                        </DataGrid.Columns>
+
+
+                    </DataGrid>
+                    <Button Content="Cancelar" HorizontalAlignment="Left" Height="42" Margin="241,319,0,0" VerticalAlignment="Top" Width="112"/>
+                    <Button x:Name="btnNovo" Content="Novo" HorizontalAlignment="Left" Height="42" Margin="444,319,0,0" VerticalAlignment="Top" Width="112"/>
+                    <Label Content="Pesquisar: " HorizontalAlignment="Left" Margin="99,42,0,0" VerticalAlignment="Top" FontSize="20" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" FontWeight="Black"/>
+                    <TextBox x:Name="txtPesquisa" HorizontalAlignment="Left" Height="42" Margin="223,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="387" FontSize="20" />
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tbProduto" Header="Cadastro">
+                <Grid Background="#FFE5E5E5">
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="167" Margin="73,36,0,0" VerticalAlignment="Top" Width="653"/>
+                    <Label Content="Nome" HorizontalAlignment="Left" Margin="141,55,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+                    <Label Content="Fornecedor" HorizontalAlignment="Left" Margin="95,95,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+                    <Label Content="Quantidade" HorizontalAlignment="Left" Margin="91,137,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+                    <TextBox x:Name="txtCadProdNome" HorizontalAlignment="Left" Height="36" Margin="223,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" FontSize="20"/>
+                    <TextBox x:Name="txtCadProdQuant" HorizontalAlignment="Left" Height="36" Margin="223,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" FontSize="20" />
+                    <ComboBox x:Name="cmbCadProd" HorizontalAlignment="Left" Margin="223,95,0,0" VerticalAlignment="Top" Width="446" FontSize="20" Height="32"/>
+                    <Button x:Name="btnCadProdCanc" Content="Cancelar" HorizontalAlignment="Left" Height="54" Margin="141,270,0,0" VerticalAlignment="Top" Width="176"/>
+                    <Button x:Name="btnCadProdSalvar" Content="Salvar" HorizontalAlignment="Left" Height="54" Margin="455,270,0,0" VerticalAlignment="Top" Width="184"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
